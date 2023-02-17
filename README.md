@@ -10,3 +10,6 @@
 # Полезные команды:
  * `esptool.py -p /dev/ttyUSB0 chip_id` - узнать версию чипа ESP32
 
+# Порядок установки Arduino IDE + ESP32 под Linux
+см. файл INSTALL.md
+
