@@ -1,9 +1,11 @@
 /*
- * Безобрасно простой "Blink LED" для ESP32 DOIT DEVKIT v1
+ * Безобразно простой "Blink LED" для ESP32 DOIT DEVKIT v1
  */
 
-#define LED 2 // голубой светодиод на плате подключен к GPIO2 и GND
-// красный светодиод горит при включении питания
+#define LED LED_BUILTIN // голубой светодиод на плате подключен к GPIO2 и GND
+                        // красный светодиод горит при включении питания
+
+#define BAUDRATE 115200 // скорость UART бит/с
 
 void setup() {
   // put your setup code here, to run once:
@@ -12,8 +14,8 @@ void setup() {
   pinMode(LED, OUTPUT);
 
   // print "Hello ESP32" to UART
-  Serial.begin(115200);
-  Serial.print("\nHello ESP32!\n\n");
+  Serial.begin(BAUDRATE);
+  Serial.println("\nHello ESP32!\n");
 }
 
 void loop() {
