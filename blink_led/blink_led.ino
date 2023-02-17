@@ -51,6 +51,7 @@ void setup() {
   Serial.begin(BAUDRATE);
   Serial.println("\r\nHello ESP32!");
   Serial.printf("Timer frequency = %i Hz\r\n", TIMER_FREQ_HZ);
+  Serial.flush();
 }
 
 // функция вызываемая с частотой прерывания от таймера из контекста главного цикла
@@ -77,7 +78,8 @@ void timer_callback()
 // функция вызываемая из контектса главного цикла с периодом 1 сек
 void on_second()
 {
-  Serial.printf("timer_ticks = %u\r\n", timer_ticks);  
+  Serial.printf("timer_ticks = %u\r\n", timer_ticks);
+  Serial.flush();
 }
 
 void loop() {
@@ -93,6 +95,6 @@ void loop() {
       on_second();
     }
 
-    // TODO: тут можно попробовать перемести МК в сон до следующего прерывания
+    // TODO: тут хорошо бы перевести SoC в легкий сон до следующего прерывания таймера
   }
 }
