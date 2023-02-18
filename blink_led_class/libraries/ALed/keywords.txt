@@ -1,0 +1,16 @@
+# class
+ALed		KEYWORD1
+
+# methods and functions
+get		KEYWORD2
+set		KEYWORD2
+on              KEYWORD2
+off             KEYWORD2
+blink		KEYWORD2
+tick		KEYWORD2
+
+# constants
+ALED_PIN	LITERAL1
+ALED_ON_TICKS	LITERAL1
+ALED_OFF_TICKS	LITERAL1
+
