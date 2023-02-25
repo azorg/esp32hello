@@ -8,8 +8,6 @@
 #define BAUDRATE 115200 // скорость UART бит/с
 
 void setup() {
-  // put your setup code here, to run once:
-
   // set pin mode to output
   pinMode(LED, OUTPUT);
 
@@ -19,7 +17,6 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
   digitalWrite(LED, HIGH);
   delay(200);
 

@@ -85,16 +85,14 @@ void on_second()
 void loop() {
   // имитировать обработчик от таймера
   uint32_t t0 = 0, t1;
-  for (;;) {
-    if (timer_irq) {
-      timer_irq = 0;
-      timer_callback();      
-    }
-
-    for (t1 = timer_ticks; t1 - t0 >= TIMER_FREQ_HZ; t0 += TIMER_FREQ_HZ) {
-      on_second();
-    }
-
-    // TODO: тут хорошо бы перевести SoC в легкий сон до следующего прерывания таймера
+  if (timer_irq) {
+    timer_irq = 0;
+    timer_callback();      
   }
+
+  for (t1 = timer_ticks; t1 - t0 >= TIMER_FREQ_HZ; t0 += TIMER_FREQ_HZ) {
+    on_second();
+  }
+
+  // TODO: тут хорошо бы перевести SoC в легкий сон до следующего прерывания таймера
 }
