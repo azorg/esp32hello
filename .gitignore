@@ -3,7 +3,7 @@ build
 *.swp
 *.*~
 
-#*.svd
-#*.cfg
+*.svd
+*.cfg
 #*.json
 
