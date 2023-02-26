@@ -17,6 +17,8 @@
  
  4. `blink_led_arduino` - моргание светодиодом с использованием классов (ABlink, ATicker)
 
+ 5. `blink_led_microrl` - моргание светодиодом и CLI интерфейс на основе MicroRL
+
 # Полезные команды:
 
  * `esptool.py -p /dev/ttyUSB0 chip_id` - узнать версию чипа ESP32
