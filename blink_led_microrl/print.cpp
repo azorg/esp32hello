@@ -34,8 +34,8 @@ int print_chr(char c)
 #endif
 }
 //-----------------------------------------------------------------------------
-// print integer value
-int print_int(int i)
+// print long integer value
+int print_int(long i)
 {
   char minus = 0;
   char buf[12];
@@ -59,8 +59,8 @@ int print_int(int i)
   return print_str(ptr);
 }
 //-----------------------------------------------------------------------------
-// print unsigned integer
-int print_uint(unsigned i)
+// print unsigned long integer
+int print_uint(unsigned long i)
 {
   char buf[12];
   char *ptr = buf + sizeof(buf) - 1;
@@ -74,8 +74,8 @@ int print_uint(unsigned i)
   return print_str(ptr);
 }
 //-----------------------------------------------------------------------------
-// print unsigned integer with '0' on the begin
-int print_uint_ex(unsigned i, char digits)
+// print unsigned long integer with '0' on the begin
+int print_uint_ex(unsigned long i, char digits)
 {
   char buf[12];
   char *ptr = buf + sizeof(buf) - 1;
@@ -95,8 +95,8 @@ int print_uint_ex(unsigned i, char digits)
   return print_str(ptr);
 }
 //-----------------------------------------------------------------------------
-// print binary unsigned integer value
-int print_bin(unsigned i, char digits)
+// print binary unsigned long integer value
+int print_bin(unsigned long i, char digits)
 {
   char buf[33];
   char *ptr = buf + 32;
@@ -112,8 +112,8 @@ int print_bin(unsigned i, char digits)
   return print_str(ptr);
 }
 //-----------------------------------------------------------------------------
-// hex print unsigned integer value
-int print_hex(unsigned i, char digits)
+// hex print unsigned long integer value
+int print_hex(unsigned long i, char digits)
 {
   char buf[9];
   char *ptr = buf + 8;
@@ -134,48 +134,48 @@ int print_hex(unsigned i, char digits)
   return print_str(ptr);
 }
 //-----------------------------------------------------------------------------
-// print integer as float in NNN.D format [d = (int) (f * 10.)]
-void print_dint(int d)
+// print long integer as float in NNN.D format [d = (int) (f * 10.)]
+void print_dint(long d)
 {
   print_int(d / 10);
   print_chr('.');
   print_int(abs(d % 10));
 }
 //-----------------------------------------------------------------------------
-// print "ident = value\r\n" (integer value)
-void print_ival(const char *ident, int i)
+// print "ident = value\r\n" (long integer value)
+void print_ival(const char *ident, long i)
 {
   print_str(ident);
   print_int(i);
   print_eol();
 }
 //-----------------------------------------------------------------------------
-// print "ident = NNN.D\r\n" (integer value as float)
-void print_dval(const char *ident, int d)
+// print "ident = NNN.D\r\n" (long integer value as float)
+void print_dval(const char *ident, long d)
 {
   print_str(ident);
   print_dint(d);
   print_eol();
 }
 //-----------------------------------------------------------------------------
-// print "ident = value\r\n" (unsigned integer value)
-void print_uval(const char *ident, unsigned i)
+// print "ident = value\r\n" (unsigned long integer value)
+void print_uval(const char *ident, unsigned long i)
 {
   print_str(ident);
   print_uint(i);
   print_eol();
 }
 //-----------------------------------------------------------------------------
-// print "ident = value\r\n" (unsigned bin value)
-void print_bval(const char *ident, unsigned i, char digits)
+// print "ident = value\r\n" (unsigned long bin value)
+void print_bval(const char *ident, unsigned long i, char digits)
 {
   print_str(ident);
   print_bin(i, digits);
   print_eol();
 }
 //-----------------------------------------------------------------------------
-// print "ident = value\r\n" (unsigned hex value)
-void print_hval(const char *ident, unsigned i, char digits)
+// print "ident = value\r\n" (unsigned long hex value)
+void print_hval(const char *ident, unsigned long i, char digits)
 {
   print_str(ident);
   print_hex(i, digits);
@@ -190,7 +190,7 @@ void print_sval(const char *ident, const char *str)
   print_eol();
 }
 //-----------------------------------------------------------------------------
-// flush USART/LPUART or USB-CDC TX buffers
+// flush UART/LPUART or USB-CDC TX buffers
 void print_flush()
 {
 #if defined(PRINT_SERIAL)

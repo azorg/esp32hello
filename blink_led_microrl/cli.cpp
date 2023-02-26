@@ -7,6 +7,7 @@
 #include <Arduino.h>
 #include "config.h"
 #include "print.h"
+#include "print_sizeof.h"
 #include "cli.h"
 #include "mrl.h"
 #include "global.h"
@@ -293,13 +294,15 @@ void cli_led_blink(int argc, char* const argv[], const cli_cmd_t *cmd)
 //-----------------------------------------------------------------------------
 void cli_sys_info(int argc, char* const argv[], const cli_cmd_t *cmd)
 { // sys info
-  //...
+  print_sizeof();
 }
 //-----------------------------------------------------------------------------
 void cli_sys_time(int argc, char* const argv[], const cli_cmd_t *cmd)
 { // sys time
-  print_uval("millis() = ", millis());
-  print_uval("micros() = ", micros());
+  unsigned long ms = millis();
+  unsigned long us = micros();
+  print_uval("millis() = ", ms);
+  print_uval("micros() = ", us);
 }
 //-----------------------------------------------------------------------------
 void cli_sys_reset(int argc, char* const argv[], const cli_cmd_t *cmd)
