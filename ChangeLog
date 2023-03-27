@@ -1,0 +1,18 @@
+2023.02.27:
+ * опробован USB-CDC на плате "Lolin S2 mini" (см. blink_led_usbcdc")
+
+2023.02.26:
+ + добавлен blink_led_arduino на основе ABlink и ATicker
+ + добавлен blink_led_microrl (ABlink + ATicker + MicroRL)
+
+2023.02.18:
+ + реализовал первый отдельный модуль на Arduino С++ (ALed.h/ALed.cpp)
+ * модуль ALed.h/ALed.cpp преобразован (оформлен) в библиотеку Arduino
+
+2023.02.17:
+ * начало работы над первым проектом для ESP32 в среде Arduino IDE
+ + установил Arduino+ESP32 получил "Blink LED" на GPIO2
+ + впервые попробовал ардуиновский Serial.print() и получил вывод "Hello ESP32"
+   (см. скетч blink_led_simple)
+ + добавил скетч blink_led с использованием прерываний от таймера
+
